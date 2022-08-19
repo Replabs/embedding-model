@@ -2,6 +2,7 @@ import os
 from flask import Flask, request
 from flask_cors import CORS
 from sentence_transformers import SentenceTransformer
+from api_keys import embedding_api_key
 
 
 app = Flask(__name__)
@@ -14,8 +15,6 @@ app.logger.info("Starting app.")
 embedding_model = SentenceTransformer('./embedding_model')
 
 app.logger.info("Loaded model.")
-
-embedding_api_key = "c0f2c08f-cf76-4422-8f0e-e5743639572a"
 
 
 @app.route("/")
